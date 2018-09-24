@@ -85,6 +85,15 @@ function initVertexBuffers(gl) { //this is where we actually set the positions o
 
 /*QUESTIONS
  * Why do some of the errors return 0 and some -1?
+ -I'm having trouble with this one. I know that wwhne a return value is greater than or equal to zero, it is the location of the specified
+ attribute variable. And if a return value is -1, the variable does not exist or its name starts with gl_ or webgl_, which is reserved and,
+ therefore, is unallowed. I am unsure about errors though.
  * What exactly is a buffer object?
+ -an area of memory that is able to store multiple vertices in the WebGL system. 
+ It is used to store the vertex data as well as pass the vertices to a vertex shader.
  * 
+ 
+ for Jeremy:
+ *What are the benefits to creating an array that contains other arrays?
+ *In what application would gl.LINE_LOOP be more useful than gl.LINE_STRIP?
 */
