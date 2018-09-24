@@ -2,20 +2,24 @@
 //vertex shader program
 var VSHADER_SOURCE = //this sets up a function that is called later whenm we init the shaders\
     'attribute vec4 a_Position;\n' + //says we are using the attribute for the point and calling it a(attribute)_position
-    'void main(){\n' + //main function that gets called
+    'void main() {\n' + //main function that gets called
     '   gl_Position = a_Position;\n' + //coordinates
     '}\n';
 
 //fragment shader
 var FSHADER_SOURCE = //this is a function that is called when we init shaders
     'void main() {\n' + // calling the main function
-    '   gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);\n' + //setting the color for the triangle
+    '   gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);\n' + //setting the color for the triangle
     '}\n';
 
 function main() { //setting up the main function
     //retrieve canvas for the shape
     var canvas = document.getElementById('webgl'); //in the DOM, get the element (that we are naming 'canvas') that has the ID 'webgl'
-
+    if (!canvas) {
+        console.log('Failed to retrieve the <canvas> element');
+        return;
+    }
+    
     //gets the 3d rendering context foor webgl
     var gl = getWebGLContext(canvas); //creates a variable to get the context of our previous vcariable canvas
     if (!gl) { //if we cannot get the context then we return this error message
